@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_servicebus_name": {
+            "defaultValue": "servicebusTest",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('connections_servicebus_name')]",
+            "location": "centralindia",
+            "kind": "V1",
+            "properties": {
+                "displayName": "DISDS-SB-CONN",
+                "statuses": [
+                    {
+                        "status": "Connected"
+                    }
+                ],
+                "customParameterValues": {},
+                "createdTime": "2024-05-17T13:57:51.7689117Z",
+                "changedTime": "2024-05-17T13:57:51.7689117Z",
+                "api": {
+                    "name": "[parameters('connections_servicebus_name')]",
+                    "displayName": "Service Bus",
+                    "description": "Connect to Azure Service Bus to send and receive messages. You can perform actions such as send to queue, send to topic, receive from queue, receive from subscription, etc.",
+                    "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/', parameters('connections_servicebus_name'), '/icon.png')]",
+                    "brandColor": "#c4d5ff",
+                    "id": "[concat('/subscriptions/fa8fb1fe-53f3-4469-8bd8-7f0c76401331/providers/Microsoft.Web/locations/centralindia/managedApis/', parameters('connections_servicebus_name'))]",
+                    "type": "Microsoft.Web/locations/managedApis"
+                },
+                "testLinks": []
+            }
+        }
+    ]
+}
