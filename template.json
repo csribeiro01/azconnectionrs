@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "connections_azureblob_name": {
-            "defaultValue": "azureblob",
+            "defaultValue": "azureblob2",
             "type": "String"
         }
     },
@@ -16,7 +16,7 @@
             "location": "centralindia",
             "kind": "V1",
             "properties": {
-                "displayName": "blobConnection",
+                "displayName": "blobConnection2",
                 "statuses": [
                     {
                         "status": "Connected"
